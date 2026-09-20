@@ -1,0 +1,24 @@
+{
+  "subject": "session_offer_encryption_gap",
+  "area": "protocol",
+  "claim": "For client revision r806919.Wizard_1_610, the repository has not verified the five-byte difference between the 23-byte Ambrose SessionOffer and the 28-byte patch-server form as an encryption block or established what each byte does.",
+  "revision": "r806919.Wizard_1_610",
+  "method": "static",
+  "how_to_repeat": [
+    "Read doc/CAPTURE.md and compare its recorded 23-byte local SessionOffer with the 28-byte form observed from a live patch server.",
+    "Inspect the SessionOffer checklist and confirm that only the frame length and the acceptance of the 23-byte local form are recorded, while the meaning of the extra bytes remains open.",
+    "Search contrib/findings/protocol/ and the repository history for an own-client capture that changes one candidate field at a time and records the client's response.",
+    "Run the missing experiment against a local server and the user's own r806919 client: send the candidate 28-byte offer, capture SessionAccept or rejection, and repeat with each candidate field changed while recording only lengths, offsets, field labels, and outcomes."
+  ],
+  "evidence": [
+    "doc/CAPTURE.md records that the r806919 client accepted a 23-byte SessionOffer in a local session and then sent MSG_USER_AUTHEN_V3.",
+    "doc/CAPTURE.md records a 28-byte offer from a live KingsIsle patch server but states that whether the r806919 client accepts it and what the extra five bytes mean remains open.",
+    "The capture checklist has no completed entry that identifies an encryption block field by offset or records the client's behavior for each candidate field.",
+    "No packet capture or client-derived bytes are included in this finding."
+  ],
+  "disproof": "A repository-approved own-client experiment that identifies all five additional bytes, records their field meanings and validation rules, and shows the r806919 client's response when each field is changed.",
+  "confidence": "high",
+  "submitted_by": "lRayZ24",
+  "submitted_on": "2026-09-19",
+  "status": "claimed"
+}
