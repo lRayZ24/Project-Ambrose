@@ -1,0 +1,24 @@
+{
+  "subject": "duplicate_login_first_client_gap",
+  "area": "protocol",
+  "claim": "For client revision r806919.Wizard_1_610, the repository documents how the login server handles a second session for an account but does not yet verify what the first client displays or sends when policy 1 kicks it.",
+  "revision": "r806919.Wizard_1_610",
+  "method": "static",
+  "how_to_repeat": [
+    "Read doc/config/loginserver.md and record the two Login.DuplicateLoginPolicy outcomes, including MSG_FORCE_DISCONNECT for policy 1.",
+    "Search the login-server tests and contrib/findings/protocol/ for an own-client two-session run that keeps the first client observable when the second login succeeds.",
+    "Run two clients against a local Ambrose login server with the same account and Login.DuplicateLoginPolicy = 1, then record the first client's visible message, log line, connection close, and any follow-up frame.",
+    "Repeat with Login.DuplicateLoginPolicy = 0 to distinguish the first client's behavior from the second-session rejection path."
+  ],
+  "evidence": [
+    "doc/config/loginserver.md documents Login.DuplicateLoginPolicy = 0 as refusing the second login with AuthenFailed and a message.",
+    "doc/config/loginserver.md documents Login.DuplicateLoginPolicy = 1 as admitting the second login and kicking the earlier session with MSG_FORCE_DISCONNECT.",
+    "The F-19 row identifies the first client's visible response as unproven, and no protocol finding in this checkout records a two-client observation.",
+    "No client capture, packet bytes, account credentials, or client-derived files are included in this finding."
+  ],
+  "disproof": "A repository-approved two-client experiment for r806919 that records what the first client displays, logs, sends, and does with its connection after the second session is admitted.",
+  "confidence": "high",
+  "submitted_by": "lRayZ24",
+  "submitted_on": "2026-09-19",
+  "status": "claimed"
+}
