@@ -1,0 +1,24 @@
+{
+  "subject": "pet_system_evidence_gap",
+  "area": "world",
+  "claim": "For client revision r806919.Wizard_1_610, the repository does not yet contain a verified own-client observation establishing how an equipped pet is represented, follows its owner, gains energy, or reports pet updates.",
+  "revision": "r806919.Wizard_1_610",
+  "method": "static",
+  "how_to_repeat": [
+    "Read README.md's current-status table and confirm that pets are listed among systems not yet available.",
+    "Read doc/roadmap/phase-13-pets-cantrips-crafting-and-minigames.md and separate its planned pet messages and data sources from its unchecked real-client acceptance checks.",
+    "Search contrib/findings/world/ and the repository history for an existing pet finding, own-client capture, or client-driver scenario that observes an equipped pet.",
+    "Run the future observation against the user's own r806919 installation and local Ambrose server: equip a pet, change zones, wait for an energy tick, and record only message names, field metadata, timings, and visible behavior without committing client data."
+  ],
+  "evidence": [
+    "README.md states that pets are not yet available in the current project state.",
+    "Phase 13.01 lists pet messages and ObjectData/Pets as planned data sources, but its real-client pet-follow and energy acceptance checks are unchecked.",
+    "The phase-13 plan describes pet behavior as future deliverables, not as a capture-derived protocol finding.",
+    "No file exists under contrib/findings/world/ in this checkout, and no pet capture, client asset, or extracted client data was added to the repository."
+  ],
+  "disproof": "A repository-approved own-client experiment or capture for r806919 that repeatably records an equipped pet's representation, follow or zone-change behavior, energy update timing, and the relevant message fields.",
+  "confidence": "high",
+  "submitted_by": "lRayZ24",
+  "submitted_on": "2026-09-19",
+  "status": "claimed"
+}
