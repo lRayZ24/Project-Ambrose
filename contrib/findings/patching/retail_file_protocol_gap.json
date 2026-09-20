@@ -1,0 +1,24 @@
+{
+  "subject": "retail_file_patch_protocol_gap",
+  "area": "patching",
+  "claim": "For client revision r806919.Wizard_1_610, the repository does not yet have a verified own-install observation establishing how the retail patcher names a file request, delivers that file, and validates the downloaded result.",
+  "revision": "r806919.Wizard_1_610",
+  "method": "static",
+  "how_to_repeat": [
+    "Read doc/PATCHING.md and inspect its patch verification table for the rows about -P 0, the default patch path, and a patch error dialog.",
+    "Read doc/roadmap/phase-16-patch-server-and-tooling-ownership.md and separate its manifest and patchserver deliverables from its real-client acceptance checks.",
+    "Search the repository for a committed own-install capture or test result that records a retail patch request, the requested file name, the response source, and the client's validation result.",
+    "Run the missing experiment only against a separate copy of the user's own r806919 install and a local patch server, never against KingsIsle's servers or the pinned development install."
+  ],
+  "evidence": [
+    "doc/PATCHING.md marks the checks for a no-op patch connection, the default patch path, and the no-patch error dialog as 'Not yet recorded'.",
+    "doc/PATCHING.md states that the development launcher always passes -P 0 and that an Ambrose patchserver is planned, so the documented development path does not exercise the retail patcher.",
+    "The phase-16 acceptance text requires a real-client no-op patch and repair, but the current checkout contains no committed result for that acceptance check.",
+    "The repository contains no committed patching finding file and no committed pcap or client-derived patch response; no client bytes are included in this finding."
+  ],
+  "disproof": "A repository-approved own-install experiment or capture for r806919 that records the retail patcher's file naming and request sequence, the response or download path, and the validation result with repeatable evidence.",
+  "confidence": "high",
+  "submitted_by": "lRayZ24",
+  "submitted_on": "2026-09-19",
+  "status": "claimed"
+}
