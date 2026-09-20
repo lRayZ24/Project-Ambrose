@@ -1,0 +1,24 @@
+{
+  "subject": "bazaar_mutation_evidence_gap",
+  "area": "world",
+  "claim": "For client revision r806919.Wizard_1_610, the repository does not yet contain a verified own-client observation establishing the buy and sell request fields, Bazaar listing contents, paging semantics, or the legitimate stock and currency mutations.",
+  "revision": "r806919.Wizard_1_610",
+  "method": "static",
+  "how_to_repeat": [
+    "Read README.md's current-status table and confirm that the world and economy workflows are not yet available in Ambrose.",
+    "Read milestone 12.16 in doc/roadmap/phase-12-social-wizards-instances-and-realms.md and separate its planned auction-house messages, stock table, and acceptance checks from observed client behavior.",
+    "Search contrib/findings/world/ and the repository history for an own-client two-account Bazaar run that sells an item, lists it to another account, and buys it back.",
+    "Run the missing experiment against a local server and the user's own r806919 client: record the Bazaar request and response fields, page acknowledgements, quick-sell path, stock changes, item ownership, and currency ledger before and after each operation without committing client data."
+  ],
+  "evidence": [
+    "README.md states that world workflows are not yet available in the current project state.",
+    "Phase 12.16 plans shared stock, price modifiers, category paging, and auction-house messages, but its real-client acceptance checks are future work.",
+    "Phase 12.16 explicitly marks command byte values and paging key semantics as risks requiring confirmation against the client window behavior.",
+    "No file exists under contrib/findings/world/ in this checkout, and no Bazaar capture, account data, client asset, or extracted client data was added to the repository."
+  ],
+  "disproof": "A repository-approved own-client two-account experiment for r806919 that records the request and response fields, paging and quick-sell semantics, listing contents, stock mutation, item transfer, and currency ledger changes.",
+  "confidence": "high",
+  "submitted_by": "lRayZ24",
+  "submitted_on": "2026-09-19",
+  "status": "claimed"
+}
