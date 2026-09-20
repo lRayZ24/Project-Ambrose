@@ -1,0 +1,24 @@
+{
+  "subject": "revision_change_evidence_gap",
+  "area": "data",
+  "claim": "The repository does not yet contain a verified comparison of two user-owned client revisions that establishes the complete added, removed, and changed archive, zone, and locale file lists.",
+  "revision": "r806919.Wizard_1_610",
+  "method": "static",
+  "how_to_repeat": [
+    "Read the F-15 row in doc/CONTRIBUTOR-TRACK.md and confirm that it asks for changes between two client revisions.",
+    "Inspect contrib/tools/ambrose-install-diff/README.md and confirm that the tool requires two user-provided installation folders and reports only archive, zone, and locale paths.",
+    "Search contrib/findings/data/ for an existing revision comparison finding and search the repository for a committed pair of client installations or a committed client-derived comparison report.",
+    "Run ambrose-install-diff against two separate copies of the user's own installations, record the revisions from their Bin/revision.dat files, and preserve only the path names, sizes, and summary in a future finding."
+  ],
+  "evidence": [
+    "The F-15 row identifies the desired result as a list of archives, zones, and locale files that changed between two client revisions.",
+    "ambrose-install-diff/README.md says that the tool reads two user-provided installations at runtime and reports added, removed, and changed files in those three categories.",
+    "ambrose-install-diff/README.md states that other files are ignored and that its FNV-1a digest is a change detector rather than a cryptographic identity.",
+    "No file exists under contrib/findings/data/ in this checkout, and no client installation, archive, capture, or extracted data was added to the repository."
+  ],
+  "disproof": "A repository-approved report from two user-owned revisions that names both revisions and records the complete archive, zone, and locale file differences with a repeatable comparison method.",
+  "confidence": "high",
+  "submitted_by": "lRayZ24",
+  "submitted_on": "2026-09-19",
+  "status": "claimed"
+}
