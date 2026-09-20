@@ -1,0 +1,24 @@
+{
+  "subject": "trade_lock_flow_evidence_gap",
+  "area": "protocol",
+  "claim": "For client revision r806919.Wizard_1_610, the repository does not yet contain a verified two-client observation establishing trade status and action values, ready-lock transitions, tradable item rules, or the result after a disconnect.",
+  "revision": "r806919.Wizard_1_610",
+  "method": "static",
+  "how_to_repeat": [
+    "Read README.md's current-status table and confirm that the client does not yet reach the world or trading workflows in Ambrose.",
+    "Read milestone 12.10 in doc/roadmap/phase-12-social-wizards-instances-and-realms.md and separate its planned trade messages, transaction behavior, and acceptance checks from observed client behavior.",
+    "Search contrib/findings/protocol/ and the repository history for an own-client two-account trade run that records every offer, lock, ready, confirmation, and cancel transition.",
+    "Run the missing experiment against a local server and the user's own r806919 clients: create and join a trade, add items and gold, toggle ready on both sides, change an offer after ready, complete the swap, and repeat with a full receiver and a disconnect without committing client data."
+  ],
+  "evidence": [
+    "README.md states that world and social workflows are not yet available in the current project state.",
+    "Phase 12.10 plans TRADE_CREATE, TRADE_REQUEST, TRADE_JOIN_STATUS, TRADE_CHANGE_ITEM, TRADE_CHANGE_MONEY, TRADE_READY_STATUS, and TRADE_RESULT, but its two-real-client acceptance check is future work.",
+    "Phase 12.10 states that a change after ready should clear readiness and that the swap must fail as a whole on capacity, but it marks the Status and Action enum values as unknown.",
+    "No file exists under contrib/findings/protocol/ for trade flow, and no trade capture, account data, client asset, or extracted client data was added to the repository."
+  ],
+  "disproof": "A repository-approved two-client experiment for r806919 that records the trade status and action fields, each ready-lock transition, allowed item types, atomic failure behavior, and the unchanged inventories after a disconnect.",
+  "confidence": "high",
+  "submitted_by": "lRayZ24",
+  "submitted_on": "2026-09-19",
+  "status": "claimed"
+}
