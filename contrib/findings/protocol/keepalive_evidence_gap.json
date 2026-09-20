@@ -1,0 +1,24 @@
+{
+  "subject": "keepalive_evidence_gap",
+  "area": "protocol",
+  "claim": "For client revision r806919.Wizard_1_610, the repository does not yet contain a verified own-client capture establishing the keepalive body, its elapsed field, the idle cadence, or the client's behavior after a late or malformed reply.",
+  "revision": "r806919.Wizard_1_610",
+  "method": "static",
+  "how_to_repeat": [
+    "Read doc/CAPTURE.md and inspect the checklist entries for the server keepalive and client keepalive cadence.",
+    "Confirm that the server keepalive body, the client reply, the client frame interval, and the elapsed field are marked open.",
+    "Search contrib/findings/protocol/ and the repository history for a committed own-client keepalive capture or a finding that records its fields and timing.",
+    "Run the missing experiment against a local Ambrose server on loopback: capture an idle r806919 session for at least three minutes, record both opcode-3 directions and opcode-4 replies, then repeat with a delayed and malformed local reply."
+  ],
+  "evidence": [
+    "doc/CAPTURE.md marks the server keepalive body and whether the client answers it as open.",
+    "doc/CAPTURE.md marks the client keepalive cadence and elapsed field as open.",
+    "The capture instructions require an idle local session so keepalives appear, but the repository contains no recorded keepalive result from that procedure.",
+    "No keepalive finding or client capture was added to the repository, and this finding contains no packet bytes or client-derived data."
+  ],
+  "disproof": "A repository-approved loopback capture for r806919 that repeatably identifies the keepalive body and fields, measures the idle cadence, and records the client's response to a late or malformed reply.",
+  "confidence": "high",
+  "submitted_by": "lRayZ24",
+  "submitted_on": "2026-09-19",
+  "status": "claimed"
+}
