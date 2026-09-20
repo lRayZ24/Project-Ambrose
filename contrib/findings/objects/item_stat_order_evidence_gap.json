@@ -1,0 +1,24 @@
+{
+  "subject": "item_stat_order_evidence_gap",
+  "area": "objects",
+  "claim": "For client revision r806919.Wizard_1_610, the repository does not yet contain a verified own-client observation establishing how an item stat reaches the character sheet or the order in which multiple item effects are applied.",
+  "revision": "r806919.Wizard_1_610",
+  "method": "static",
+  "how_to_repeat": [
+    "Read README.md's current-status table and confirm that the client does not yet reach the world or gear workflows in Ambrose.",
+    "Read phase 8.07 and 8.10 in doc/roadmap/phase-08-the-wizard-grows-vitals-xp-spells-backpack-and-gear.md and separate their planned item-effect and equip deliverables from observed client behavior.",
+    "Search contrib/findings/objects/ and the repository history for an own-client experiment that equips items with isolated effects and compares the resulting character-sheet values.",
+    "Run the missing experiment against a local server and the user's own r806919 client: equip one item at a time, combine effects with different slots and set bonuses, record the item effect fields and resulting sheet values, then remove them in different orders without committing client data."
+  ],
+  "evidence": [
+    "README.md states that world and gear workflows are not yet available in the current project state.",
+    "Phase 8.07 plans item requirements, effects, and set bonuses, while phase 8.10 plans equip and unequip; their real-client acceptance checks are future work.",
+    "The phase-8 specification names planned effect fields and StatCalculator inputs but does not provide a completed observation of effect ordering or character-sheet results.",
+    "No file exists under contrib/findings/objects/ in this checkout, and no item data, client asset, capture, or extracted client data was added to the repository."
+  ],
+  "disproof": "A repository-approved own-client experiment for r806919 that records an item's effect fields, the resulting character-sheet values, and the repeatable order used when multiple item effects and set bonuses are combined.",
+  "confidence": "high",
+  "submitted_by": "lRayZ24",
+  "submitted_on": "2026-09-19",
+  "status": "claimed"
+}
