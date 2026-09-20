@@ -1,0 +1,24 @@
+{
+  "subject": "friend_presence_evidence_gap",
+  "area": "protocol",
+  "claim": "For client revision r806919.Wizard_1_610, the repository does not yet contain a verified two-client observation establishing friend-list entry fields or how online, zone-change, logout, and ignore presence updates are encoded.",
+  "revision": "r806919.Wizard_1_610",
+  "method": "static",
+  "how_to_repeat": [
+    "Read README.md's current-status table and confirm that the client does not yet reach the world or social workflows in Ambrose.",
+    "Read milestone 12.01 in doc/roadmap/phase-12-social-wizards-instances-and-realms.md and separate its planned friend messages and database rows from observed client behavior.",
+    "Search contrib/findings/protocol/ and the repository history for an own-client two-account run that accepts a friend request and records status changes.",
+    "Run the missing experiment against a local server and the user's own r806919 clients: add and accept a friend, change zones, log out, log back in, and ignore the friend while recording message fields and visible list changes without committing client data."
+  ],
+  "evidence": [
+    "README.md states that world and social workflows are not yet available in the current project state.",
+    "Phase 12.01 plans BUDDYENTRY, BUDDYSTATUSUPDATE, friend request messages, ignore messages, and character friend tables, but its two-real-client acceptance check is future work.",
+    "Phase 12.01 explicitly marks the Status, FriendInfo, and Permissions bit meanings in BUDDYENTRY as unverified.",
+    "No file exists under contrib/findings/protocol/ for friend presence, and no social capture, account data, client asset, or extracted client data was added to the repository."
+  ],
+  "disproof": "A repository-approved two-client experiment for r806919 that records the friend-entry fields and repeatable updates for acceptance, online presence, zone change, logout, relogin, and ignore behavior.",
+  "confidence": "high",
+  "submitted_by": "lRayZ24",
+  "submitted_on": "2026-09-19",
+  "status": "claimed"
+}
