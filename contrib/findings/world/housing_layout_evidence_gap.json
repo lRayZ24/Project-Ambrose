@@ -1,0 +1,24 @@
+{
+  "subject": "housing_layout_evidence_gap",
+  "area": "world",
+  "claim": "For client revision r806919.Wizard_1_610, the repository does not yet contain a verified own-client observation establishing how a housing layout is stored or how moving, rotating, picking up, and broadcasting a decoration are encoded.",
+  "revision": "r806919.Wizard_1_610",
+  "method": "static",
+  "how_to_repeat": [
+    "Read README.md's current-status table and confirm that housing is not yet available in Ambrose.",
+    "Read milestones 15.01 through 15.03 in doc/roadmap/phase-15-housing-gardening-and-fishing.md and separate their planned house instance, house_object, placement, patch, and blob behavior from observed client behavior.",
+    "Search contrib/findings/world/ and the repository history for an own-client housing run that places and moves a decoration, relogs, restarts, or observes the layout from a visitor.",
+    "Run the missing experiment against a local server and the user's own r806919 clients: place, move, rotate, hide, pick up, and pick up all decorations, then relog and let a visitor inspect the house while recording message fields and persistence without committing client data."
+  ],
+  "evidence": [
+    "README.md states that housing is not yet available in the current project state.",
+    "Phase 15.02 plans characters.house_object with template, position, yaw, and state and lists placement, update, pickup, and visitor patch messages, but its real-client persistence check is future work.",
+    "Phase 15.02 explicitly marks MSG_REQUEST_BLOBS and MSG_SEND_BLOB usage as unverified.",
+    "No file exists under contrib/findings/world/ for housing layout, and no housing capture, account data, client asset, or extracted client data was added to the repository."
+  ],
+  "disproof": "A repository-approved own-client housing experiment for r806919 that records the layout representation, placement/update/pickup fields, visitor patches or blobs, and persistence across relog and server restart.",
+  "confidence": "high",
+  "submitted_by": "lRayZ24",
+  "submitted_on": "2026-09-19",
+  "status": "claimed"
+}
