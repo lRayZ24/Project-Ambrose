@@ -1,0 +1,24 @@
+{
+  "subject": "round_timing_evidence_gap",
+  "area": "combat",
+  "claim": "For client revision r806919.Wizard_1_610, the repository does not yet contain a verified own-client observation establishing the combat turn timer, planning interval, round boundary messages, or timeout behavior.",
+  "revision": "r806919.Wizard_1_610",
+  "method": "static",
+  "how_to_repeat": [
+    "Read README.md's current-status table and confirm that combat is not yet available in Ambrose.",
+    "Read doc/roadmap/phase-11-real-combat.md and separate its planned combat messages and milestone acceptance checks from observed client behavior.",
+    "Search contrib/findings/combat/ and the repository history for an own-client combat capture that records card-selection timing, round transitions, and timeout results.",
+    "Run the missing experiment against a local combat-capable server and the user's own r806919 client: start a duel, record both participants' selection and resolution messages with timestamps, wait through a timeout, and repeat at the next round without committing capture bytes."
+  ],
+  "evidence": [
+    "README.md states that combat is not yet available in the current project state.",
+    "Phase 11.01 describes future multi-participant duel acceptance checks, while phase 11.18 separately schedules timers, AFK, pause, and spectators; neither is a completed client observation.",
+    "The phase-11 document contains planned message names and implementation goals but no completed timing table or own-client capture result for the round boundary.",
+    "No file exists under contrib/findings/combat/ in this checkout, and no combat capture, client asset, or extracted client data was added to the repository."
+  ],
+  "disproof": "A repository-approved own-client combat experiment for r806919 that repeatably records the planning and turn intervals, identifies the messages at the round boundary, and shows what happens when a participant does not select a move in time.",
+  "confidence": "high",
+  "submitted_by": "lRayZ24",
+  "submitted_on": "2026-09-19",
+  "status": "claimed"
+}
