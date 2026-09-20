@@ -1,0 +1,24 @@
+{
+  "subject": "instance_sigil_flow_evidence_gap",
+  "area": "world",
+  "claim": "For client revision r806919.Wizard_1_610, the repository does not yet contain a verified own-client observation establishing how an instance is created, joined, reset, and counted down from a dungeon sigil.",
+  "revision": "r806919.Wizard_1_610",
+  "method": "static",
+  "how_to_repeat": [
+    "Read README.md's current-status table and confirm that the client does not yet reach world, dungeon, or instance workflows in Ambrose.",
+    "Read the instance sections of doc/roadmap/phase-12-social-wizards-instances-and-realms.md and milestone 14.01 in doc/roadmap/phase-14-dungeons-tutorial-and-pvp.md.",
+    "Separate the planned soft and hard limits, private-instance timeout, sigil gather timer, party snapshot, instance id, leaver exclusion, and skeleton-key behavior from observed client behavior.",
+    "Run the missing experiment against a local server and the user's own r806919 clients: enter a sigil solo and as a group, leave before the countdown ends, enter again after an instance empties, and record instance IDs, timer messages, membership, reset timing, and key consumption without committing client data."
+  ],
+  "evidence": [
+    "README.md states that world workflows are not yet available in the current project state.",
+    "Phase 12 plans public and private instance selection, capacity limits, instance switching, and private-instance timeout, but its real-client checks are future work.",
+    "Phase 14.01 plans the sigil gather timer, party snapshot, instance id allocation, owner-loss handling, zone timers, and skeleton-key consumption, but its real-client countdown check is unchecked.",
+    "No file exists under contrib/findings/world/ in this checkout, and no dungeon capture, account data, client asset, or extracted client data was added to the repository."
+  ],
+  "disproof": "A repository-approved own-client experiment for r806919 that records sigil countdown and timer messages, group membership and leaver rules, instance IDs, reset or re-entry behavior, and skeleton-key mutation.",
+  "confidence": "high",
+  "submitted_by": "lRayZ24",
+  "submitted_on": "2026-09-19",
+  "status": "claimed"
+}
